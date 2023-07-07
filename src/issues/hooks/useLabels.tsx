@@ -9,7 +9,7 @@ const getLabels = async(): Promise<Label[]> => {
     await sleep(2)
 
     //Sobreescribiendo el header de esta peticion por un error externo en github
-    const { data } = await gitHubApi.get<Label[]>('labels', {
+    const { data } = await gitHubApi.get<Label[]>('labels?per_page=100', {
         headers: {
             Authorization: null
         }
